@@ -12,15 +12,13 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('timetable.store', ['group_id' => $group_id]) }}">
                             @csrf
-
                             <div class="row mb-3">
                                 <label for="predmets_id" class="col-md-4 col-form-label text-md-end">Предмет</label>
                                 <div class="col-md-6">
-                                    <select class="form-select" aria-label="Default select example" id="predmets_id" name="predmets_id" placeholder="Выберите предмет">
-
+                                    <select class="form-select" aria-label="Default select example" id="predmets_id"
+                                            name="predmets_id" placeholder="Выберите предмет">
                                         @foreach ($predmetList as $predmetOption)
                                             <option value="{{ $predmetOption->id }}">
-                                                {{-- {{ $categoryOption->id }} . {{ $categoryOption->title }} --}}
                                                 {{ $predmetOption->title }}
                                             </option>
                                         @endforeach
@@ -31,7 +29,8 @@
                             <div class="row mb-3">
                                 <label for="groups_id" class="col-md-4 col-form-label text-md-end">Группа</label>
                                 <div class="col-md-6">
-                                    <select class="form-select" aria-label="Default select example" id="groups_id" name="groups_id" placeholder="Выберите предмет">
+                                    <select class="form-select" aria-label="Default select example" id="groups_id"
+                                            name="groups_id" placeholder="Выберите предмет">
 
                                         @foreach ($groupList as $groupOption)
                                             <option value="{{ $groupOption->id }}"
@@ -42,12 +41,11 @@
                                     </select>
                                 </div>
                             </div>
-
-
                             <div class="row mb-3">
                                 <label class="col-md-4 col-form-label text-md-end">{{  __('Препод') }}</label>
                                 <div class="col-md-6">
-                                    <select class="form-select" aria-label="Default select example" id="prepods_id" name="prepods_id" placeholder="Выберите предмет">
+                                    <select class="form-select" aria-label="Default select example" id="prepods_id"
+                                            name="prepods_id" placeholder="Выберите предмет">
 
                                         @foreach ($prepodList as $prepodOption)
                                             <option value="{{ $prepodOption->id }}">
@@ -59,10 +57,12 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Аудитория') }}</label>
+                                <label for="email"
+                                       class="col-md-4 col-form-label text-md-end">{{ __('Аудитория') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="audience" value="{{ $item->audience }}" required autocomplete="email">
+                                    <input id="name" type="text" class="form-control" name="audience"
+                                           value="{{ $item->audience }}" required autocomplete="email">
 
 
                                 </div>
@@ -70,7 +70,8 @@
                             <div class="row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Время') }}</label>
                                 <div class="col-md-6">
-                                    <select class="form-select" aria-label="Default select example" name="time" value="{{ $item->time }}">
+                                    <select class="form-select" aria-label="Default select example" name="time"
+                                            value="{{ $item->time }}">
                                         <option selected>Выберите</option>
                                         <option value="1">1 пара 8:30-10:05</option>
                                         <option value="2">2 пара 10:15-11:50</option>
@@ -83,10 +84,12 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('День недели') }}</label>
+                                <label for="name"
+                                       class="col-md-4 col-form-label text-md-end">{{ __('День недели') }}</label>
                                 <div class="col-md-6">
-                                    <select class="form-select" aria-label="Default select example" name="day_num" value="{{ $item->day_num }}">
-                                    <option selected>Выберите</option>
+                                    <select class="form-select" aria-label="Default select example" name="day_num"
+                                            value="{{ $item->day_num }}">
+                                        <option selected>Выберите</option>
                                         <option value="1">Понедельник</option>
                                         <option value="2">Вторник</option>
                                         <option value="3">Среда</option>
@@ -98,9 +101,11 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Четность недели') }}</label>
+                                <label for="name"
+                                       class="col-md-4 col-form-label text-md-end">{{ __('Четность недели') }}</label>
                                 <div class="col-md-6">
-                                    <select class="form-select" aria-label="Default select example" name="week_parity" value="{{ $item->week_parity }}" placeholder="Выберите предмет">
+                                    <select class="form-select" aria-label="Default select example" name="week_parity"
+                                            value="{{ $item->week_parity }}" placeholder="Выберите предмет">
                                         <option selected>Выберите</option>
                                         <option value="1">Нечетная</option>
                                         <option value="2">Четная</option>

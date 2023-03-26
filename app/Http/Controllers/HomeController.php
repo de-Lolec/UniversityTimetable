@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\BlogPost;
 use App\Models\Timetable;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 
 class HomeController extends Controller
@@ -26,11 +27,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-     //   $item = Timetable::all();
-        $item = timetable::paginate(5);
-        //return view('users.profile');
+        Role::create(['name' => 'learner']);
 
-        return view('Timetable',
-            compact('item'));
+        return view('home');
     }
 }

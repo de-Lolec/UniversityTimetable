@@ -17,22 +17,9 @@ use App\Http\Controllers\EventController;
 |
 */
 
-//Route::get('/', function () {
-//    return view('Timetable');
-//});
-
-Route::get('', [App\Http\Controllers\Timetable\admin\TimetableController::class, 'indexMainPage'])->name('index.timetable');
+Route::get('', [App\Http\Controllers\Timetable\admin\TimetableController::class, 'indexMainPage'])->name('home');
 
 Route::get('sort/', [App\Http\Controllers\Timetable\admin\TimetableController::class, 'TimeIndex'])->name('sort');
-//Route::get('/user/{id}/{name}', function ($id, $name) {
-//    return 'ID: ' . $id . 'Name: ' . $name;
-//});
-
-//Route::get(
-//    '/user/profile',
-//    [UserProfileController::class, 'index']
-//)->name('profile');
-
 
 Route::get('/user/{id}/{name}', [App\Http\Controllers\Timetable\User\UserProfileController::class, 'index'])->name('profile');
 
@@ -87,7 +74,3 @@ Route::group($groupData, function () {
         ->only($methods)
         ->names('predmet');
 });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
